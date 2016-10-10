@@ -14,7 +14,11 @@ namespace HelloWorld
 
             var module = new HelloModule();
 
-            Console.WriteLine(module.SayHello(args[0]));
+                Console.WriteLine(module.SayHello(args[0]));
+
+            var nameLastname = new Homework();
+
+                Console.WriteLine(nameLastname.SayNameLastname("AruNAs", "muRAsKa"));
 
             Console.ReadLine();
         }
