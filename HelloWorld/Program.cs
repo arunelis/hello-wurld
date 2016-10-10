@@ -1,4 +1,6 @@
 ﻿using System;
+using System;
+using System.Linq;
 
 namespace HelloWorld
 {
@@ -19,6 +21,28 @@ namespace HelloWorld
             var nameLastname = new Homework();
 
                 Console.WriteLine(nameLastname.SayNameLastname("AruNAs", "muRAsKa"));
+
+
+
+            // tiem kas nori kazko sudetingesnio ANTRAS MODULIS: is teksto isrenka ir grazina daugiausiai kartu panaudota raide
+            int mostOccurrence = -1;
+            char mostOccurringChar = ' ';
+            string charString = nameLastname.SayNameLastname("AruNAs", "muRAsKa").Trim();
+            foreach (char currentChar in charString)
+            {
+                int foundCharOccreence = 0;
+                foreach (char charToBeMatch in charString)
+                {
+                    if (currentChar == charToBeMatch)
+                        foundCharOccreence++;
+                }
+                if (mostOccurrence < foundCharOccreence)
+                {
+                    mostOccurrence = foundCharOccreence;
+                    mostOccurringChar = currentChar;
+                }
+            }
+            Console.WriteLine(mostOccurringChar + ": " + mostOccurrence);
 
             Console.ReadLine();
         }
